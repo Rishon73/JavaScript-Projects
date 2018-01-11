@@ -1,0 +1,14 @@
+{
+	"address":"ws://localhost:5095",
+	"autoLaunch": "true",
+	"report":{
+		"enabled":"true",
+		"reportFolder":"RunResults",
+		"title":"Run Results",
+		"description":"",
+		"targetDirectory":".",
+		"overrideExisting":"true",
+		"reportLevel":"All",
+		"snapshotsLevel":All
+		}
+}	
