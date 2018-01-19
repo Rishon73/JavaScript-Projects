@@ -12,7 +12,9 @@ describe('demo',function(){
 	jasmine : jasmine.DEFAULT_TIMEOUT_INTERVAL = 30 * 1000;
 
 	var browser;
-
+    LFT.init();
+    this.timeout(20+1000);
+    
 	beforeAll(function(done){
 		LFT.init("config");
 
@@ -63,41 +65,25 @@ describe('demo',function(){
 		var saveToCart = browser.$(Web.Button().buttonType("submit").name("ADD TO CART").tagName("BUTTON"));
 		saveToCart.click();
 
-		var checkOutBtn = browser.$(Web.Button().buttonType("submit").name(/CHECKOUT.*/).tagName("BUTTON"))
+		var checkOutBtn = browser.$(Web.Button().buttonType("submit").name(/CHECKOUT.*/).tagName("BUTTON"));
 		checkOutBtn.click();
 
 		var nextBtn = browser.$(Web.Button().buttonType("submit").name("NEXT").tagName("BUTTON"));
 		nextBtn.click();
 
-		var payNowBtnMastercredit = browser.$(Web.Button({
-				buttonType: "submit",
-				name: "PAY NOW",
-				tagName: "BUTTON"
-			}));
+		var payNowBtnMastercredit = browser.$(Web.Button().buttonType("submit").name("PAY NOW").tagName("BUTTON"));
 		payNowBtnMastercredit.click();
 
-		var thankYouForBuyingWith = browser.$(Web.Element({
-				innerText: "Thank you for buying with Advantage",
-				tagName: "SPAN"
-			}));
+		var thankYouForBuyingWith = browser.$(Web.Element().innerText("Thank you for buying with Advantage").tagName("SPAN"));
 		thankYouForBuyingWith.click();
 
-		var shaharMyAccountMyOrders = browser.$(Web.Link({
-				innerText: "Shahar My account My Orders Sign out ",
-				tagName: "A"
-			}));
+		var shaharMyAccountMyOrders = browser.$(Web.Link().innerText("Shahar My account My Orders Sign out ").tagName("A"));
 		shaharMyAccountMyOrders.click();
 
-		var signOut = browser.$(Web.Link({
-				innerText: "Sign out",
-				tagName: "LABEL"
-			}));
+		var signOut = browser.$(Web.Link().innerText("Sign out").tagName("LABEL"));
 		signOut.click();
 
-		var dvantageDemo = browser.$(Web.Link({
-				innerText: "dvantage DEMO ",
-				tagName: "A"
-			}));
+		var dvantageDemo = browser.$(Web.Link().innerText("dvantage DEMO ").tagName("A"));
 		dvantageDemo.click();
 
 /* <== Placeholder for next recorded step. Cut and paste this line to start recording from a different line in your code. Do not delete or duplicate this line.  ==> */
